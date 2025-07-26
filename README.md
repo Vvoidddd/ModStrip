@@ -1,5 +1,7 @@
 # ModStrip
 
+![ModStrip](ModStrip.png)
+
 ModStrip is a powerful Garry's Mod addon cleaner tool designed to detect and remove broken or invalid addons safely. It offers a **Safe Mode** feature that moves problematic addons to a backup folder instead of deleting them, ensuring no accidental loss.
 
 ---
@@ -104,3 +106,4 @@ MIT License — feel free to use, modify, and redistribute.
 ## Contact
 
 For issues or feature requests, please open an issue on the GitHub repository or contact the developer directly.
+
