@@ -14,6 +14,7 @@ APP_ID = '4000'
 BLACKLIST_FILE = "modstrip_blacklist.txt"
 LOG_FILE = "modstrip_log.txt"
 BACKUP_DIR_NAME = "ModStrip_Backup"
+ICON_PATH = "ModStrip.ico"  # Make sure this .ico is in the same folder or provide full path
 
 def parse_vdf(path):
     try:
@@ -95,6 +96,14 @@ def close_gmod_if_running():
 class ModStripApp(ctk.CTk):
     def __init__(self, gmod_dir):
         super().__init__()
+
+        # Set window icon on Windows
+        if platform.system() == "Windows":
+            try:
+                self.iconbitmap(ICON_PATH)
+            except Exception as e:
+                print(f"Failed to set icon: {e}")
+
         self.title("ModStrip")
         self.geometry("900x600")
         ctk.set_appearance_mode("dark")
