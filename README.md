@@ -2,30 +2,30 @@
 
 ![ModStrip](ModStrip.png)
 
-ModStrip is a powerful Garry's Mod addon cleaner tool designed to detect and remove broken or invalid addons safely. It offers a **Safe Mode** feature that moves problematic addons to a backup folder instead of deleting them, ensuring no accidental loss.
+ModStrip is a powerful Garry's Mod addon cleaner and repair tool designed to detect and remove broken or invalid addons safely. It features an optional **Safe Mode** that moves problematic addons to a backup folder instead of deleting them, minimizing risk of data loss.
 
 ---
 
 ## Features
 
 - **Safe Mode (Optional)**  
-  Enable backup mode to automatically move broken addons to a `ModStrip_Backup` folder instead of permanently deleting them.
+  Automatically moves broken addons to `ModStrip_Backup` instead of deleting them.
 
 - **Addon Validation**  
-  - Checks `.gma` files for validity and minimum size.  
-  - Parses addon directories for file structure integrity.  
-  - Detects duplicate paths across addons (`lua/`, `materials/`, `models/`, `sound/`).  
-  - Scans for partial workshop downloads (`.part` files).  
-  - Removes empty addon folders.
+  - Validates `.gma` headers and minimum size.
+  - Checks addon folders for required structure.
+  - Detects duplicate paths (e.g., `lua/`, `materials/`, `models/`, `sound/`).
+  - Flags partial workshop downloads (`.part` files).
+  - Cleans empty addon folders.
 
 - **Blacklist Support**  
-  Prevents removal of specific workshop addons listed in `modstrip_blacklist.txt`.
+  Protects specified workshop addons listed in `modstrip_blacklist.txt`.
 
-- **User-Friendly GUI**  
-  Built with `customtkinter` for a modern, dark-themed interface.
+- **Modern GUI**  
+  Uses `customtkinter` for a clean dark-themed interface.
 
 - **Live Logging**  
-  Logs all operations to `modstrip_log.txt` and displays output in-app.
+  Logs all activity to `modstrip_log.txt` and shows real-time output in-app.
 
 ---
 
@@ -33,9 +33,9 @@ ModStrip is a powerful Garry's Mod addon cleaner tool designed to detect and rem
 
 - Python 3.8+  
 - [customtkinter](https://github.com/TomSchimansky/CustomTkinter)  
-- `psutil` (for process management)  
+- `psutil`
 
-Install dependencies with:
+Install dependencies:
 
 ```bash
 pip install customtkinter psutil
@@ -51,33 +51,59 @@ pip install customtkinter psutil
    python modstrip.py
    ```
 
-2. If Garry's Mod installation is not detected automatically, select your GMod folder manually (folder containing the `garrysmod` directory).
+2. If your Garry's Mod folder isn't auto-detected, manually select it.
 
-3. Use the GUI options:
+3. Options:
 
-   * **Dry Run**: Simulate cleanup without deleting or moving files.
-   * **Show Full Path**: Display full file paths in the log output.
-   * **Safe Mode**: When enabled, broken addons are moved to `ModStrip_Backup` instead of deleted permanently.
+   * **Dry Run**: Simulate without deleting/moving files.
+   * **Show Full Path**: Expand log paths.
+   * **Safe Mode**: Enable backup instead of delete.
 
-4. Click **Run Cleanup** to start scanning and cleaning your addons.
+4. Click **Run Cleanup**.
 
-5. Use buttons to open the log file, edit the blacklist, or view developer info.
+5. Optional tools:
+
+   * View/edit blacklist
+   * Open log file
+   * Developer info
 
 ---
 
 ## Safe Mode Behavior
 
-When **Safe Mode** is enabled:
+When enabled:
 
-* Detected broken or invalid addons are moved to a `ModStrip_Backup` folder inside your Garry's Mod addons directory.
-* This prevents permanent loss and allows manual review or restoration.
+* Broken or invalid addons are moved to `ModStrip_Backup` inside your `addons/` folder.
+* Review or restore them later manually.
 
 ---
 
 ## Blacklist
 
-* Add Steam Workshop addon IDs (folder names) you want to protect from removal in `modstrip_blacklist.txt`.
-* One ID per line.
+* Add folder names of addons you want to exclude from removal into `modstrip_blacklist.txt`.
+* One line per addon ID or folder name.
+
+---
+
+## ⚠️ Distribution Notice
+
+This is the **only valid source** for ModStrip:
+
+**GitHub Repository**: [https://github.com/Vvoidddd/ModStrip](https://github.com/Vvoidddd/ModStrip)
+
+If you do not wish to build it yourself, the prebuilt `.exe` is located in the [Releases](https://github.com/Vvoidddd/ModStrip/releases) section.
+
+Do **not** trust ModStrip binaries from unofficial sources.
+
+---
+
+## License
+
+### Custom License
+
+You are permitted to **use** and **modify** this project **only with direct permission from the creator**.
+
+You may **not** redistribute modified versions or derivative works without explicit approval. Any modification that introduces **malicious, misleading, or poor-quality code** is strictly prohibited.
 
 ---
 
@@ -85,25 +111,20 @@ When **Safe Mode** is enabled:
 
 * Created by Void
 * GitHub: [https://github.com/Vvoidddd](https://github.com/Vvoidddd)
-* UI powered by CustomTkinter: [https://github.com/TomSchimansky/CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
-
----
-
-## License
-
-MIT License — feel free to use, modify, and redistribute.
+* UI: [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
 
 ---
 
 ## Troubleshooting
 
-* Ensure `customtkinter` and `psutil` are installed.
-* Run Python with sufficient permissions to access Garry's Mod folders.
-* Close Garry's Mod before running the cleanup for accurate and safe operation.
+* Ensure Python and all dependencies are installed.
+* Close Garry's Mod before scanning.
+* Run the script with permission to access your addons folder.
 
 ---
 
 ## Contact
 
-For issues or feature requests, please open an issue on the GitHub repository or contact the developer directly.
+Open a GitHub issue or reach out directly via the profile link above.
+
 
